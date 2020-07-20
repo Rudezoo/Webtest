@@ -1,28 +1,104 @@
-header{
-    border-bottom: 2px gray solid;
-    padding-bottom: 10px;
-    padding-left: 20px;
+body.white{
+    background-color: white;
+    color : black;
+}
+
+body.black{
+    background-color: black;
+    color: white;
+    
+}
+
+
+header{   
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 a{
     text-decoration: none;
 }
-a:link , a:visited{
+.indexing:link, .indexing:visited{
     color: black;
 }
-nav ol{
+.indexing2:link, .indexing2:visited{
+    color:white;
+}
+
+
+#menubar{  
+    
+    background-color: black;
+    font-weight: bold;
     list-style: none;
-    margin-top: 0px;
-    border-right: 2px gray solid;
-    padding-top: 20px;
-    padding-right: 25px;  
-    padding-left: 25px; 
+    width: 1000;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+#menubar li{
+    line-height: 50px;
+    background-color: black;
+    width: 150px;
+    float: left;
+}
+#menubar li a{
+    color: white;
+    display: block;
+}
+
+#menubar li a:hover{
+    color: red;
+    background-color: white;
+}
+
+article{
+    
+    list-style: none;
+    padding: 50px;
     float: left;
     
     height: 600px;
 }
 
-article{
-    padding-top: 20px;
-    padding-left: 20px;
-    float: left;
+#control{
+    float: right;
+}
+
+
+#checking {
+    font-weight: normal;
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    left: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: height .2s; -webkit-transition: height .2s; -moz-transition: height .2s; -o-transition: height .2s;
+    width: 574px; 
+    height: 0px;
+
+}
+#checking li{
+    background-color: black;
+}
+#checking li a{
+    color: white;
+    display: block;
+}
+#checking li a:visited, #checking li a:link{
+    color: white;
+}
+#checking li a:hover{
+    background-color:white;
+    color: red;
+}
+
+
+#menubar li:hover #checking{
+    height: 50px;
+    opacity: 1;
+    visibility: visible;   
 }

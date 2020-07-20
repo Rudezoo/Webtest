@@ -1,0 +1,7 @@
+            <center>
+            <li><a class ="indexing" href="http://127.0.0.1:81/index.php?id=1" >HTML</a>
+           <ul id='checking'><li><a href="http://127.0.0.1:81/index.php?id=4">test</a></li><li><a href="http://127.0.0.1:81/index.php?id=5">test2</a></li></ul></li>
+            <li><a class ="indexing" href="http://127.0.0.1:81/index.php?id=2">CSS</a></li>
+            <li><a class ="indexing" href="http://127.0.0.1:81/index.php?id=3">JAVAScript</a></li>
+            <li><a class ="indexing" href="http://127.0.0.1:81/index.php?id=3">check</a></li>
+            </center>
