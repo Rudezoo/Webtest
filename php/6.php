@@ -2,7 +2,7 @@
 
 $conn=mysqli_connect("127.0.0.1:3306","root","wndjs1212");
 mysqli_select_db($conn,'pinsert');
-$id=mysqli_real_escape_string($conn,$_GET['id']);
+$id=mysqli_real_escape_string($conn,$_GET['userid']);
 $passwd=mysqli_real_escape_string($conn,$_GET['password']);
 $sql="select * from user where userid='".$id."' and password='".$passwd."'";
 $result=mysqli_query($conn,$sql);

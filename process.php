@@ -1,6 +1,5 @@
 <?php
-    $conn=mysqli_connect("localhost","root","wndjs1212");
-    mysqli_select_db($conn,'pinsert');
+    require("lib/db.php");
 
     $sql="Insert into topic(title,autor,description,created) values"."('".$_POST['title']."','".$_POST['autor']."','".$_POST['description']."',now())";
 
