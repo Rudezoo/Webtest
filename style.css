@@ -24,6 +24,12 @@ a{
     color:white;
 }
 
+article{
+    float: left;
+}
+#script1{
+    float: right;
+}
 
 #menubar{  
     
@@ -46,10 +52,6 @@ a{
     display: block;
 }
 
-#menubar li a:hover{
-    color: red;
-    background-color: white;
-}
 
 article{
     
@@ -58,10 +60,6 @@ article{
     float: left;
     
     height: 600px;
-}
-
-#control{
-    float: right;
 }
 
 
@@ -91,11 +89,6 @@ article{
 #checking li a:visited, #checking li a:link{
     color: white;
 }
-#checking li a:hover{
-    background-color:white;
-    color: red;
-}
-
 
 #menubar li:hover #checking{
     height: 50px;

@@ -2,6 +2,8 @@
     $conn=mysqli_connect("127.0.0.1:3306","root","wndjs1212");
     mysqli_select_db($conn,'pinsert');
     $result=mysqli_query($conn,"select * from topic");
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,39 +25,27 @@
 
     <nav>
         <ol id='menubar' class="menus">
-            <center>
             <?php
               while($row=mysqli_fetch_assoc($result)){
-                echo '<li><a class="indexing" href="http://localhost:81/index.php?id='.$row['id'].'">'.htmlspecialchars($row['title']).'</li></a>'."\n";
+                echo '<li><a href="http://localhost:81/index.php?id='.$row['id'].'">'.$row['title'].'</li></a>'."\n";
             }
             ?>
-            </center>
         </ol>
     </nav>
 
 <article>
-<p><a id="test">this is test</a></p>
-<a href="http://localhost:81/write.php">Write</a>
-<?php
-
-    if(empty($_GET['id'])==false){
-        $sql='select * from topic where id='.$_GET['id'];
-        $result=mysqli_query($conn,$sql);
-        $row = mysqli_fetch_assoc($result);
-    
-        echo '<h2>'.htmlspecialchars($row['title']).'</h2>';
-        echo '<p>'.strip_tags($row['description'],'<a><h1><h2><h3><h4><h5>').'</p>';
-    }else{
-        echo file_get_contents("0.txt");
-    }
-
-?>
+<form action="process.php" method="POST">
+    <p>TITLE : <input type="text" name="title"></p>
+    <p>AUTHOR : <input type="text" name="autor"></p>
+    <p>Description : <textarea name="description"></textarea></p>
+    <input type="submit" value="Submit">
+</form>
 </article>
 
 <script src="http://localhost:81/script2.js?after"></script>
 
 <div id="script1">
-<script src="http://localhost:81/script.js?after"></script>
+<script src="http://localhost:81/script.js/after"></script>
 </div>
 
 </body>
