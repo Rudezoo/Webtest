@@ -12,46 +12,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="bootstrap-4.5.0-dist\css\bootstrap.css">
 
-    <link rel="stylesheet" type="text/css" href="http://localhost:81/style.css?after">
+    <link rel="stylesheet" type="text/css" href="http://localhost:81/style.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body id="back" class="white">
 
+    <div class="container-fluid" style="z-index: 1;">
+        <div class="text-center">
+        <header>
+            <a class ="indexing" href="http://localhost:81/index.php"><img src="pinsert.png" width="300"></a>
+        </header>
+        </div>
 
-    <div style="text-align: center">
-    <header>
-        <a class ="indexing" href="http://localhost:81/index.php"><img src="pinsert.png" width="300"></a>
-    </header>
-    </div>
+        <nav>
+            <ol id='menubar' class="menus text-center">
+                <?php
+                $check=0;
+                while($row=mysqli_fetch_assoc($result)){
+                    echo '<li><a class="indexing" href="http://localhost:81/index.php?id='.$row['id'].'">'.htmlspecialchars($row['title']).'</a>';
+                    if($check==0){          
+                        require("index_sibiling.html");
+                        $check=$check+1;
+                    }
+                    echo '</li>';
+               
+                }
+                ?>
+            </ol>
+        </nav>
 
-    <nav>
-        <ol id='menubar' class="menus">
-            <center>
-            <?php
-              while($row=mysqli_fetch_assoc($result)){
-                echo '<li><a class="indexing" href="http://localhost:81/index.php?id='.$row['id'].'">'.htmlspecialchars($row['title']).'</li></a>'."\n";
-            }
-            ?>
-            </center>
-        </ol>
-    </nav>
-
-<article>
-<form action="process.php" method="POST">
-    <p>TITLE : <input type="text" name="title"></p>
-    <p>AUTHOR : <input type="text" name="autor"></p>
-    <p>Description : <textarea name="description"></textarea></p>
-    <input type="submit" value="Submit">
+    <article>
+       
+    <div class="jumbotron">
+        
+    <form action="process.php" method="POST">
+        <div class="form-group">
+                <label for="mytitle">TITLE</label>
+                <input id="mtitle" class="form-control" type="text" name="title" placeholder="Write Title">
+                <label for="myauthor">Author</label>
+                <input id="myauthor" class="form-control" type="text" name="autor" placeholder="Write Author">
+                <label for="mydesc">Author</label>
+                <textarea id="mydesc" rows="10" class="form-control" type="text" name="description" placeholder="Write Description"></textarea>
+            </div>
+    <input type="submit" value="Submit" class="btn btn-success btn-lg">
 </form>
-</article>
-<script src="bootstrap-4.5.0-dist\js\bootstrap.js"></script>
+    </div>
+    </article>
+    <hr>
+    <a href="http://localhost:81/write.php" class="btn btn-success btn-lg">Write</a>
+   
+    <script src="bootstrap-4.5.0-dist\js\bootstrap.js"></script>
 
-<script src="http://localhost:81/script2.js?after"></script>
-<div id="script1">
-<script src="http://localhost:81/script.js?after"></script>
-</div>
-
+    <script src="http://localhost:81/script2.js?after"></script>
+    </div>
 </body>
 
 </html>

@@ -1,4 +1,0 @@
-<h2><span style="font-style :inherit">CSS이란 무엇인가?</span></h2>
-
-
-<p>여기는 CSS 파트입니다.</p>
